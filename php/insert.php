@@ -2,7 +2,7 @@
 <?php
 require 'connect.php';//添加数据库
 
-$sql="INSERT INTO 'MSI'.`student` (`student-id`, `realname`, `nickname`, `email`, `pwd`) VALUES ('1', '李四', '王五', 'xx@qq.com', '123');";
+$sql="INSERT INTO 'MSI'.`student` (`student-id`, `realname`, `nickname`, `email`, `pwd`) VALUES ('1', '李四', '王五', 'xx@qq.com', '123')";
 
 if(mysqli_query($conn,$sql))
 {
