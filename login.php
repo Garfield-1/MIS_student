@@ -7,7 +7,6 @@ $username = "root";
 $password = "13379378389a";
 $dbname = "MIS";
 
-//判断是否按下提交按钮
 
 //将用户名和密码存入变量中，供后续使用
 $user = $_POST["admin_name"];
