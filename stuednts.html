@@ -40,7 +40,7 @@
         <ul class="bot">
           <li><a href=""><i class="system"></i><em>系统设置</em></a></li>
           <li><a href="product_category.html"><i class="productCat"></i><em>证书信息</em></a></li>
-          <li><a href="backup.html"><i class="show"></i><em>学生信息</em></a></li>
+          <li><a href="stuednts.html"><i class="show"></i><em>学生信息</em></a></li>
           <li><a href="taecher.html"><i class="page"></i><em>教师信息</em></a></li>
           <li><a href="manager.html"><i class="manager"></i><em>网站管理员</em></a></li>
 
@@ -49,45 +49,30 @@
     <div id="dcMain">
       <!-- 当前位置 -->
 
-      <div id="urHere">管理中心<b>></b><strong>证书类型</strong> </div>
+      <div id="urHere">管理中心<b>></b><strong>学生信息</strong> </div>
       <div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-        <h3><a href="add_certificate.html" class="actionBtn add">添加证书</a>证书类型</h3>
+        <h3><a href="add_studenrs.html" class="actionBtn">添加学生</a>学生信息</h3>
         <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
-          <tr>
-            <th width="120" align="left">证书名称</th>
-            <th align="left">证书编号</th>
-            <th align="left">发行单位</th>
-            <th width="60" align="center">对应学分</th>
-            <th width="80" align="center">操作</th>
-          </tr>
-          <tr>
-            <td align="left"> <a href="https://cet-bm.neea.edu.cn/">大学生英语四级</a></td>
-            <td>xxxxxxxxxxxxxx</td>
-            <td>中华人民共和国教育部</td>
-            <td align="center">2</td>
-            <td align="center"><a href="product_category.php?rec=del&cat_id=1">删除</a>
-            </td>
-          </tr>
+          <form name="myform" method="post" action="backup.php?rec=backup">
+            <tr>
+              <th align="left">姓名</th>
+              <th align="center">学号</th>
+              <th align="center">专业</th>
+              <th align="center">获得证书数量</th>
+              <th align="center">以获得学分</th>
+              <th align="center">是否合格</th>
+            </tr>
 
-          <tr>
-            <td align="left"> <a href="https://cet-bm.neea.edu.cn/">大学生英语四级</a></td>
-            <td>xxxxxxxxxxxxxx</td>
-            <td>中华人民共和国教育部</td>
-            <td align="center">2</td>
-            <td align="center"><a href="product_category.php?rec=del&cat_id=1">删除</a>
-            </td>
-          </tr>
+            <tr>
+              <td align="left">张三</td>
+              <td align="center">B18060000</td>
+              <td align="center">计算机科学与技术</td>
+              <td align="center">4</td>
+              <td align="center">7</td>
+              <td align="center">合格</td>
+            </tr>
 
-
-          <tr>
-            <td align="left"> <a href="https://cet-bm.neea.edu.cn/">大学生英语四级</a></td>
-            <td>xxxxxxxxxxxxxx</td>
-            <td>中华人民共和国教育部</td>
-            <td align="center">2</td>
-            <td align="center"> <a href="product_category.php?rec=del&cat_id=1">删除</a>
-            </td>
-          </tr>
-
+          </form>
         </table>
       </div>
     </div>

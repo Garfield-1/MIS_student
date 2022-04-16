@@ -21,17 +21,17 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 
 
-    if ($num) //如果已经存在该用户 
+    if (!$num) 
     {
-        echo "<script>alert('用户已存在'); history.go(-1);</script>";
-    } else //不存在当前注册用户名称 
-    {
-        $sql_insert = "insert into `teacher` ( `teacher-id`, `realname`,`job-title`,`email`) VALUES ( '".$number." ', '".$user." ','".$title."','".$email."')";
+        echo "<script>alert('输入的工号不存在'); history.go(-1);</script>";
+    } else 
+    {  
+        $sql_insert = "UPDATE `teacher` SET  `realname` = '$user', `job-title` = '$title', `email` = '$email' WHERE `teacher-id` = '$number'";
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
-            echo "<script>alert('添加成功！'); history.go(-1);</script>";
+            echo "<script>alert('更新成功！ $num'); history.go(-1);</script>";
         } else {
-            echo "<script>alert('添加失败！'); history.go(-1);</script>";
+            echo "<script>alert('更新失败！'); history.go(-1);</script>";
         }
     }
 }

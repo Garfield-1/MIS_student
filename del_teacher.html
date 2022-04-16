@@ -19,7 +19,7 @@
 
         <div class="nav">
           <ul class="navRight">
-            <li class="M noLeft"><a href="JavaScript:void(0);">您好，admin</a>
+            <li class="M noLeft"><a href="JavaScript:void(0);">您好</a>
               <div class="drop mUser">
                 <a href="manager.php?rec=edit&id=1">编辑我的个人资料</a>
                 <a href="manager.php?rec=cloud_account">设置账户</a>
@@ -30,7 +30,6 @@
         </div>
       </div>
     </div>
-
     <!-- dcHead 结束 -->
     <div id="dcLeft">
       <div id="menu">
@@ -48,47 +47,28 @@
     </div>
     <div id="dcMain">
       <!-- 当前位置 -->
+      <div id="urHere">管理中心<b>></b><strong>更新教师</strong> </div>
+      <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="manager.html" class="actionBtn">返回列表</a>更新教师</h3>
+        <form action="del_teacher.php" method="post">
+          <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
 
-      <div id="urHere">管理中心<b>></b><strong>证书类型</strong> </div>
-      <div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-        <h3><a href="add_certificate.html" class="actionBtn add">添加证书</a>证书类型</h3>
-        <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
-          <tr>
-            <th width="120" align="left">证书名称</th>
-            <th align="left">证书编号</th>
-            <th align="left">发行单位</th>
-            <th width="60" align="center">对应学分</th>
-            <th width="80" align="center">操作</th>
-          </tr>
-          <tr>
-            <td align="left"> <a href="https://cet-bm.neea.edu.cn/">大学生英语四级</a></td>
-            <td>xxxxxxxxxxxxxx</td>
-            <td>中华人民共和国教育部</td>
-            <td align="center">2</td>
-            <td align="center"><a href="product_category.php?rec=del&cat_id=1">删除</a>
-            </td>
-          </tr>
-
-          <tr>
-            <td align="left"> <a href="https://cet-bm.neea.edu.cn/">大学生英语四级</a></td>
-            <td>xxxxxxxxxxxxxx</td>
-            <td>中华人民共和国教育部</td>
-            <td align="center">2</td>
-            <td align="center"><a href="product_category.php?rec=del&cat_id=1">删除</a>
-            </td>
-          </tr>
-
-
-          <tr>
-            <td align="left"> <a href="https://cet-bm.neea.edu.cn/">大学生英语四级</a></td>
-            <td>xxxxxxxxxxxxxx</td>
-            <td>中华人民共和国教育部</td>
-            <td align="center">2</td>
-            <td align="center"> <a href="product_category.php?rec=del&cat_id=1">删除</a>
-            </td>
-          </tr>
-
-        </table>
+            <tr>
+              <td width="200">请输入要删除教师工号</td>
+              <td>
+                <input type="teacher_nub" name="numbering" size="40" class="inpMain" />
+              </td>
+            </tr>
+            
+            <tr>
+              <td></td>
+              <td>
+                <!-- <input type="hidden" name="token" value="5a58b748" /> -->
+                <input type="submit" name="submit" class="btn" value="提交" />
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
   </div>

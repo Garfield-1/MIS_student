@@ -1,11 +1,6 @@
 <?php
 
-$servername = "120.78.226.194";
-$username = "root";
-$password = "13379378389a";
-$dbname = "MIS";
-$conn = mysqli_connect($servername, $username, $password, $dbname); //连接数据库,帐号密码为自己数据库的帐号密码 
-
+require 'link.php';//添加数据库
 
 $user = $_POST["user_name"];
 $email = $_POST["email"];
