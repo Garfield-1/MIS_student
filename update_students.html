@@ -49,34 +49,47 @@
     </div>
     <div id="dcMain">
       <!-- 当前位置 -->
-
-      <div id="urHere">管理中心<b>></b><strong>教师信息</strong> </div>
-      <div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-        <h3><a href="add_teacher.html" class="actionBtn add">添加教师</a><a href="teacher.php" class="actionBtn">查看教师</a>教师信息</h3>
-        
-        <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
-          <form name="myform" method="post" action="backup.php?rec=backup">
+      <div id="urHere">管理中心<b>></b><strong>更新学生</strong> </div>
+      <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="manager.html" class="actionBtn">返回列表</a>更新学生</h3>
+        <form action="update_students.php" method="post">
+          <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
             <tr>
-              <th align="left">姓名</th>
-              <th align="center">工号</th>
-              <th align="center">职称</th>
-              <th align="center">获得证书数量</th>
-              <th align="center">操作</th>
+              <td width="100" align="right">学生学号</td>
+              <td>
+                <input type="teacher_name" name="students_id" size="40" class="inpMain" />
+              </td>
             </tr>
-
             <tr>
-              <td align="left">张三</td>
-              <td align="center">G0000000</td>
-              <td align="center">讲师</td>
-              <td align="center">4</td>
-              <td align="center"><a href="update_teacher.html">编辑</a>|<a href="del_teacher.html">删除</a></td>
+              <td width="100" align="right">学生名称</td>
+              <td>
+                <input type="teacher_nub" name="stu-name" size="40" class="inpMain" />
+              </td>
             </tr>
-
-          </form>
-        </table>
+            <tr>
+              <td align="right">邮箱</td>
+              <td>
+                <input type="teacher_nub" name="email" size="40" class="inpMain" />
+              </td>
+            </tr>
+            <tr>
+              <td align="right">专业</td>
+              <td>
+                <input type="teacher_nub" name="stu-profession" size="40" class="inpMain" />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <!-- <input type="hidden" name="token" value="5a58b748" /> -->
+                <input type="submit" name="submit" class="btn" value="提交" />
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
-  </div>  
+  </div>
 </body>
 
 </html>

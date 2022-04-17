@@ -2,13 +2,13 @@
 
 require 'link.php';//添加数据库
 
-$user = $_POST["user_name"];
+$students_id = $_POST["students_id"];
 $email = $_POST["email"];
-$number = $_POST["numbering"];
-$title = $_POST["job_title"];
+$name = $_POST["stu-name"];
+$profession = $_POST["stu-profession"];
 
 
-if ($user == "" || $email == "" || $number == "" || $title == "") {
+if ($students_id == "" || $email == "" || $name == "" || $profession == "") {
     echo "<script>alert('请确认信息完整性！'); history.go(-1);</script>";
 } else {
     if (mysqli_errno($conn)) {
@@ -16,20 +16,20 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
         exit;
     }
 
-    $sql = "select `teacher-id` from `teacher` where `teacher-id` = '$number'"; //SQL语句
+    $sql = "select `student-id` from `student` where `student-id` = '$students_id'"; //SQL语句
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 
 
     if (!$num) 
     {
-        echo "<script>alert('输入的工号不存在'); history.go(-1);</script>";
+        echo "<script>alert('输入的学号不存在'); history.go(-1);</script>";
     } else 
     {  
-        $sql_insert = "UPDATE `teacher` SET  `realname` = '$user', `job-title` = '$title', `email` = '$email' WHERE `teacher-id` = '$number'";
+        $sql_insert = "UPDATE `student` SET  `stu-name` = '$name', `stu-profession` = '$profession', `email` = '$email' WHERE `student-id` = '$students_id'";
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
-            echo "<script>alert('更新成功！ '); history.go(-1);</script>";
+            echo "<script>alert('更新成功！'); history.go(-1);</script>";
         } else {
             echo "<script>alert('更新失败！'); history.go(-1);</script>";
         }
