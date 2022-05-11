@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>管理中心</title>
+  <meta name="Copyright" content="Douco Design." />
+  <link href="css/public.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+  <div id="dcWrap">
+    <div id="dcHead">
+      <div id="head">
+        <div class="logo"><a href="index.html"><img src="images/北信logo.jpg " width="150" height="30" alt="logo"></a>
+        </div>
+
+        <div class="nav">
+          <ul class="navRight">
+            <li class="M noLeft"><a href="JavaScript:void(0);">您好</a>
+              <div class="drop mUser">
+                <a href="manager.php?rec=edit&id=1">编辑我的个人资料</a>
+                <a href="manager.php?rec=cloud_account">设置账户</a>
+              </div>
+            </li>
+            <li class="noRight"><a href="login.php?rec=logout">退出</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- dcHead 结束 -->
+    <div id="dcLeft">
+      <div id="menu">
+        <ul class="top">
+          <li><a href="index.html"><i class="home"></i><em>管理首页</em></a></li>
+        </ul>
+        <ul class="bot">
+          <li><a href=""><i class="system"></i><em>系统设置</em></a></li>
+          <li><a href="product_category.html"><i class="productCat"></i><em>证书信息</em></a></li>
+          <li><a href="backup.html"><i class="show"></i><em>学生信息</em></a></li>
+          <li><a href="taecher.html"><i class="page"></i><em>教师信息</em></a></li>
+          <li><a href="manager.html"><i class="manager"></i><em>网站管理员</em></a></li>
+          <li><a href="consult.html"><i class="manager"></i><em>查询汇总</em></a></li>
+          <li><a href="consult.html"><i class="manager"></i><em>证书绑定</em></a></li>
+
+      </div>
+    </div>
+    <div id="dcMain">
+      <!-- 当前位置 -->
+      <div id="urHere">管理中心<b>></b><strong>证书绑定</strong> </div>
+      <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="manager.html" class="actionBtn">返回列表</a>证书绑定</h3>
+        <form action="add_teacher.php" method="post">
+          <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+            <tr>
+              <td width="100" align="right">学生姓名</td>
+              <td>
+                <input type="teacher_nub" name="email" size="40" class="inpMain" />
+              </td>
+            </tr>
+            <tr>
+              <td align="right">学生学号</td>
+              <td>
+                <input type="teacher_nub" name="numbering" size="40" class="inpMain" />
+              </td>
+            </tr>
+            <tr>
+              <td align="right">证书名称</td>
+              <td>
+                <input type="teacher_nub" name="job_title" id="txt" size="40" class="inpMain" />
+                <select id="test" onchange="tt(this.id)">
+                  <option value="1">“1+X”财务数字化应用职业技能等级证书 (高级)</option>
+                  <option value="2">“1+X”财务数字化应用职业技能等级证书 (中级)</option>
+                  <option value="3">“1+X”业财一体信息化应用职业技能等级 证书（高级）</option>
+                  <option value="4">“1+X”业财一体信息化应用职业技能等级 证书（中级）</option>
+                  <option value="5">3dmax 培训合格证</option>
+                  <option value="6">AFP 金融理财师认证证书</option>
+                  <option value="7">AutoCAD 建筑设计</option>
+                  <option value="8">AutoCAD 培训合格证</option>
+                  <option value="9">BIM 建模师</option>
+                  <option value="10">CCNA</option>
+                  <option value="11">CET-4</option>
+                  <option value="12">CET-6</option>
+                  <option value="13">CFA 注册金融分析师</option>
+                  <option value="14">CFP 国际金融理财师认证证书</option>
+                  <option value="15">CFTM 注册金融科技管理师</option>
+                  <option value="16">CFT 金融科技证书</option>
+                  <option value="17">CIFA 国际货运代理从业人员岗位专业证书</option>
+                  <option value="18">CoreDraw 培训合格证</option>
+                  <option value="19">FRM 金融风险管理师认证证书</option>
+                  <option value="20">HCIA 华为认证 ICT 初级工程师</option>
+                  <option value="21">HCIP 华为认证 ICT 高级工程师</option>
+                  <option value="22">HCIE 华为认证 ICT 专家</option>
+                  <option value="23">NCRE（全国计算机等级考试）二级</option>
+                  <option value="24">NCRE（全国计算机等级考试）三级</option>
+                  <option value="25">NCRE（全国计算机等级考试）一级</option>
+                  <option value="26">Photo shop 培训合格证</option>
+                  <option value="27">Pro.E 培训合格证</option>
+                  <option value="28">RHCSA 红帽认证系统管理员</option>
+                  <option value="29">RHCE 红帽认证工程师</option>
+                  <option value="30">Solideworks 设计认证（高级）</option>
+                  <option value="31">Solideworks 设计认证（中级</option>
+                  <option value="32">安全员</option>
+                  <option value="33">半导体集成电路工艺技术</option>
+                  <option value="34">材料员</option>
+                  <option value="35">测量员</option>
+                  <option value="37">程序员</option>
+                  <option value="38">出版专业资格证</option>
+                  <option value="39">初级网络管理员</option>
+                  <option value="40">导游资格证</option>
+              </select>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <!-- <input type="hidden" name="token" value="5a58b748" /> -->
+                <input type="submit" name="submit" class="btn" value="提交" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script >
+    function tt(id) {
+      var aa = document.getElementById(id);
+      var i = aa.selectedIndex;
+      var text = aa.options[i].text;
+      var value = aa.options[i].value;
+      document.getElementById("txt").value = text;
+  }</script>
+</body>
+
+</html>

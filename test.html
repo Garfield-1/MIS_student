@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html>
-<body>
-    <?php
-      echo "hello world";
-    ?>
-</body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="js/global.js"></script>
+    </head>
+
+    <body>  
+        借用原因:<input type="text"  disabled="disabled" id="txt"/>
+        <select id="test" onchange="tt(this.id)">
+            <option value="1">自己使用</option>
+            <option value="2">部门使用</option>
+            <option value="3">其它</option>
+        </select>
+        
+        <script >
+        function tt(id) {
+          var aa = document.getElementById(id);
+          var i = aa.selectedIndex;
+          var text = aa.options[i].text;
+          var value = aa.options[i].value;
+          document.getElementById("txt").value = text;
+      }</script>
+    </body>
+
 </html>

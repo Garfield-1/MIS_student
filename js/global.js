@@ -151,3 +151,19 @@ function douRemove(target) {
 function change(id, choose) {
     document.getElementById(id).value = choose.options[choose.selectedIndex].title;
 }
+
+
+// 下拉菜单填入input
+
+function tt(id) {
+    var aa = document.getElementById(id);
+    var i = aa.selectedIndex;
+    var text = aa.options[i].text;
+    var value = aa.options[i].value;
+    document.getElementById("txt").value = text;
+}
+
+
+function test(id) {
+    alert("Hello");
+ }
