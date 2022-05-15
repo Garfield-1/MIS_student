@@ -13,6 +13,8 @@ AND `total`.`student-id` = `student`.`student-id`
 ORDER BY 
 `total`.`student-id` ASC";
 
+
+mysqli_query($conn,"set names utf8");
 $result=mysqli_query($conn,$sql);
 
 echo '查询到的记录数量'.mysqli_num_rows($result);
