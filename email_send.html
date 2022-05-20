@@ -46,24 +46,36 @@
           <li><a href="bound_cert.html"><i class="manager"></i><em>证书绑定</em></a></li>
       </div>
     </div>
-    <div id="dcMain"> <!-- 当前位置 -->
-        <div id="index" class="mainBox" style="padding-top:18px;height:auto!important;height:550px;min-height:550px;">  
-         
-            <div class="indexBox">
-          <div class="boxTitle">学生信息查询</div>
-            <ul class="ipage">
-            <a href="select_certifcate_all.php">总体预览</a> 
-  
-            <a href="select_certifcate_num.html" >以学号为标准</a> 
-              
-            <a href="select_certifcate_cert.html" >以证书为标准</a>
-            
-            <a href="email_send.html">发送评语</a> 
-              
-            </ul>
-         </div>
-        </div>
+    <div id="dcMain">
+      <!-- 当前位置 -->
+      <div id="urHere">管理中心<b>></b><strong>审核评语</strong> </div>
+      <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="manager.html" class="actionBtn">返回列表</a>审核评语</h3>
+        <form action="email.php" method="post">
+          <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+            <tr>
+              <td align="right">请输入要接收邮件的学号</td>
+              <td>
+                <input type="teacher_nub" name="stu-id" id="txt" size="40" class="inpMain" />
+              </td>
+            </tr>
+            <tr>
+              <td align="right">请输入评语内容</td>
+              <td>
+                <input type="teacher_nub" name="txt" id="txt" size="40" class="inpMain" />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" name="submit" class="btn" value="提交" />
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
+    </div>
+  </div>
 </body>
 
 </html>

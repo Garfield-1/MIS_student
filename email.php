@@ -5,6 +5,21 @@ use PHPMailer\PHPMailer\Exception;
 require './src/Exception.php';
 require './src/PHPMailer.php';
 require './src/SMTP.php';
+require 'link.php';//添加数据库
+
+$stu_id=$_POST["stu-id"];
+$conclusion=$_POST["txt"];
+
+$sql = "SELECT 
+`email` 
+FROM 
+`student` 
+WHERE `student-id` = $stu_id";
+
+mysqli_query($conn,"set names utf8");
+$result=mysqli_query($conn,$sql);
+
+$obj=mysqli_fetch_object($result);//获取sql结果
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -19,14 +34,14 @@ try {
     $mail->SMTPSecure = 'ssl';                    // 允许 TLS 或者ssl协议
     $mail->Port = 465;                            // 服务器端口 25 或者465 具体要看邮箱服务器支持
 
-    $mail->setFrom('13379378389@163.com', '163');  //发件人
-    $mail->addAddress('1319974835@qq.com', 'qq');  // 收件人
+    $mail->setFrom('13379378389@163.com', '西安工商学院技能证书管理');  //发件人
+    $mail->addAddress($obj->email, 'qq');  // 收件人
     //$mail->addAddress('ellen@example.com');  // 可添加多个收件人
     $mail->addReplyTo('13379378389@163.com', 'info'); //回复的时候回复给哪个邮箱 建议和发件人一致
     
     $mail->isHTML(true);                                  // 是否以HTML文档格式发送  发送后客户端可直接显示对应HTML内容
-    $mail->Subject = '这里是邮件标题' . time();
-    $mail->Body    = '<h1>这里是邮件内容</h1>' . date('Y-m-d H:i:s');
+    $mail->Subject = '本邮件由西安工商学院技能证书管理系统自动发送';
+    $mail->Body    = '关于您在系统提交的证书有如下问题：<br>'.$conclusion .'<br>发送日期：'. date('Y-m-d H:i:s');
     $mail->AltBody = '如果邮件客户端不支持HTML则显示此内容';
 
     $mail->send();
