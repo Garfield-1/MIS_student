@@ -5,6 +5,7 @@ require 'link.php';//添加数据库
 $user = $_POST["stu-name"];
 $number = $_POST["numbering"];
 $title = $_POST["cert-name"];
+$cert_num=$_POST["cert-num"];
 
 
 if ($user == "" || $number == "" || $title == "") {
@@ -21,7 +22,8 @@ if ($user == "" || $number == "" || $title == "") {
 
 
 
-    $sql_insert = "INSERT INTO `MIS`.`total` ( `student-id`, `student-name`,`certificate-name`) VALUES ( '".$number." ','".$user." ', '".$title."')";
+    $sql_insert = "INSERT INTO `MIS`.`total` ( `student-id`, `student-name`,`certificate-name`,`certificate-num`) VALUES ( '".$number." ','".$user." ', '".$title."','".$cert_num." ')";
+    mysqli_query($conn,"set names utf8");
     $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
     if ($result_insert) {
         echo "<script>alert('添加成功！'); history.go(-1);</script>";

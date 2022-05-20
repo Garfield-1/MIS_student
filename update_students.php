@@ -17,6 +17,7 @@ if ($students_id == "" || $email == "" || $name == "" || $profession == "") {
     }
 
     $sql = "select `student-id` from `student` where `student-id` = '$students_id'"; //SQL语句
+    mysqli_query($conn,"set names utf8");
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 

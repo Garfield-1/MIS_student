@@ -17,6 +17,7 @@ if ($name == "" || $type == "" || $source == "" || $score == "") {
     }
 
     $sql = "select `certificate-name` from `certificate` where `certificate-name` = '$name'"; //SQL语句
+    mysqli_query($conn,"set names utf8");
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 

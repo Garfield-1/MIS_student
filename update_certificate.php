@@ -27,6 +27,7 @@ if ($certificate == "" || $type == "" || $number == "" || $source == "") {
     } else 
     {  
         $sql_insert = "UPDATE `certificate` SET  `score` = '$number', `source` = '$source', `type` = '$type' WHERE `certificate-name` = '$certificate'";
+        mysqli_query($conn,"set names utf8");
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
             echo "<script>alert('更新成功！ '); history.go(-1);</script>";

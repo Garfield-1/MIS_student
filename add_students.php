@@ -27,6 +27,7 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
     } else //不存在当前注册用户名称 
     {
         $sql_insert = "insert into `student` ( `student-id`, `stu-name`,`email`,`stu-profession`) VALUES ( '".$number." ','".$user." ','".$email."', '".$title."')";
+        mysqli_query($conn,"set names utf8");
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
             echo "<script>alert('添加成功！'); history.go(-1);</script>";
