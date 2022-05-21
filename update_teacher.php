@@ -5,6 +5,7 @@ require 'link.php';//添加数据库
 $user = $_POST["user_name"];
 $email = $_POST["email"];
 $number = $_POST["numbering"];
+$number_news = $_POST["numbering_news"];
 $title = $_POST["job_title"];
 
 
@@ -27,7 +28,7 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
         echo "<script>alert('输入的工号不存在'); history.go(-1);</script>";
     } else 
     {  
-        $sql_insert = "UPDATE `teacher` SET  `realname` = '$user', `job-title` = '$title', `email` = '$email' WHERE `teacher-id` = '$number'";
+        $sql_insert = "UPDATE `teacher` SET  `teacher-id` = '$number_news',`realname` = '$user', `job-title` = '$title', `email` = '$email' WHERE `teacher-id` = '$number'";
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
             echo "<script>alert('更新成功！ '); history.go(-1);</script>";

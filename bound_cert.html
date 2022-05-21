@@ -67,9 +67,9 @@
             <tr>
               <td align="right">证书名称</td>
               <td>
-                <input type="teacher_nub" name="cert-name" id="txt" size="40" class="inpMain" />
+                <input type="teacher_nub" name="cert-name" placeholder="通过下拉菜单选择" id="txt" size="40" class="inpMain" />
                 <select id="test" onchange="tt(this.id)">
-                  <option value="0">请选择要查询的证书</option>
+                  <option value="0">请选择证书</option>
                   <option value="1">“1+X”财务数字化应用职业技能等级证书 (高级)</option>
                   <option value="2">“1+X”财务数字化应用职业技能等级证书 (中级)</option>
                   <option value="3">“1+X”业财一体信息化应用职业技能等级 证书（高级）</option>
@@ -172,6 +172,13 @@
               </td>
             </tr>
             <tr>
+              <tr>
+                <td align="right">指导老师</td>
+                <td>
+                  <input type="teacher_nub" name="tutor" size="40"  placeholder="如果没有则填无" class="inpMain" />
+                </td>
+              </tr>
+              <tr>
               <td></td>
               <td>
                 <input type="submit" name="submit" class="btn" value="提交" />
