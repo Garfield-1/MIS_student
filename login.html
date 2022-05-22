@@ -16,7 +16,11 @@
 			<img src="images/北信.jpg" alt="校徽" width="100px" height="100px">
 			<h2>欢迎使用后台管理系统</h2>
 		</div>
+
 		<form class="login_body" action="login.php" method="post">
+			用户类型：<input type="radio" name="admin" value="0" checked>管理员
+			<input type="radio" name="admin" value="1" checked>教务
+			<input type="radio" name="admin" value="2" checked>学生
 			<div class="input-group">
 				<span class="input-group-addon " id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
 				<!-- 输入用户名 -->
