@@ -3,7 +3,8 @@ require 'link.php';//添加数据库
 
 
 $sql = "SELECT 
-`total`.`student-id`, `student-name`, `email`, `stu-profession`, `total`.`certificate-name`, `total`.`certificate-num`,`type`,`source`, `score` 
+`total`.`student-id`, `student-name`, `email`, `stu-profession`, 
+`total`.`certificate-name`, `total`.`certificate-num`,`type`,`source`,`score`,`state`
 FROM 
 `total`, `certificate`, `student` 
 WHERE 
@@ -31,6 +32,7 @@ echo "<table>
 <th>证书编号</th>
 <th>证书发行机构</th>
 <th>证书对应学分</th>
+<th>当前状态</th>
 </tr>";
 if($result && mysqli_num_rows($result)>0)
 {
@@ -47,6 +49,7 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='center'>".$row['type']."</td>";
         echo "<td align='center'>".$row['source']."</td>";
         echo "<td align='center'>".$row['score']."</td>";
+        echo "<td align='center'>".$row['state']."</td>";
         echo "</tr>";
 
     }

@@ -36,11 +36,27 @@ switch($type)
             break;
         }
         case '1':{
-            echo $type;
+            $sql = "select username,userpwd from user_reg where username = '$user' and userpwd = '$psw'";
+            $result = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($result);
+            if ($num) {
+                echo "<script>alert('成功登录 '); window.location.href='consult_registrar.html';</script>";
+                // echo $type;
+            } else {
+                echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>";
+            }
             break;
         }
         case '2':{
-            echo $type;
+            $sql = "select username,userpwd from user_stu where username = '$user' and userpwd = '$psw'";
+            $result = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($result);
+            if ($num) {
+                echo "<script>alert('成功登录 '); window.location.href='consult_student.html';</script>";
+                // echo $type;
+            } else {
+                echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>";
+            }
             break;
         }
     }

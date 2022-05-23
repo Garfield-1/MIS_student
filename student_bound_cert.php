@@ -23,8 +23,8 @@ if ($user == "" || $number == "" || $title == "") {
 
 
 
-    $sql_insert = "INSERT INTO `MIS`.`total` ( `student-id`,`student-name`,`certificate-name`,`certificate-num`,`tutor`) 
-    VALUES ( '".$number." ','".$user." ','".$title."','".$cert_num."','".$tutor."')";
+    $sql_insert = "INSERT INTO `MIS`.`total` ( `student-id`,`student-name`,`certificate-name`,`certificate-num`,`tutor`,`state`) 
+    VALUES ( '".$number." ','".$user." ','".$title."','".$cert_num."','".$tutor."','未审核')";
     mysqli_query($conn,"set names utf8");
     $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
     if ($result_insert) {

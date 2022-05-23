@@ -4,7 +4,8 @@ require 'link.php';//添加数据库
 $stu_id=$_POST["stu-id"];//以CCNA证书为例
 
 $sql = "SELECT 
-`student-id`, `student-name`, `total`.`certificate-name`,  `total`.`certificate-num`,`source`, `score`,`authorities` 
+`student-id`, `student-name`, `total`.`certificate-name`,  `total`.`certificate-num`,
+`source`, `score`,`authorities`,`state` 
 FROM 
 `total`, `certificate` 
 WHERE 
@@ -28,6 +29,7 @@ echo "<table>
 <th>发行机构</th>
 <th>对应学分</th>
 <th>机构官网</th>
+<th>当前状态</th>
 </tr>";
 $sum=0;
 if($result && mysqli_num_rows($result)>0)
@@ -43,6 +45,7 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='center'>".$row['source']."</td>";
         echo "<td align='center'>".$row['score']."</td>";
         echo "<td align='center'>".$row['authorities']."</td>";
+        echo "<td align='center'>".$row['state']."</td>";
         echo "</tr>";
 
         $sum=$sum+$row['score'];
