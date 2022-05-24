@@ -43,6 +43,7 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='left'>".$row['student_name']."</td>";
         echo "<td align='center'>".$row['certificate_name']."</td>";
         echo "<td align='center'>".$row['certificate_num']."</td>";
+        echo "<td align='center'></a><a href=registrar_review_del_cert.php?cert_num=$row[certificate_num]>删除</a></td>";
         echo "</tr>";
     }
 }
