@@ -31,10 +31,7 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='center'>".$row['job_title']."</td>";
         echo "<td align='center'>".$row['email']."</td>";
         echo "</tr>";
-
-        $sum+=$row['teacher_id'];
-    }
-    
+    } 
 }
-echo "  教师编号总和:$sum";
+
 ?>
