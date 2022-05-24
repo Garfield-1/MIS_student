@@ -21,7 +21,7 @@ echo '查询到的记录数量'.mysqli_num_rows($result);
 
 
 mysqli_data_seek($result,0);
-echo "<table>
+echo "<table border='1'  cellspacing='0'>
 <tr>
 <th>学生学号</th>
 <th>学生姓名</th>

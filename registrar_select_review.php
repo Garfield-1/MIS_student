@@ -28,8 +28,8 @@ echo "<table>
 <th>学生学号</th>
 <th>学生姓名</th>
 <th>证书名称</th>
-<th>证书类型</th>
 <th>证书编号</th>
+<th>证书类型</th>
 <th>证书发行机构</th>
 <th>证书对应学分</th>
 <th>当前状态</th>
@@ -48,7 +48,8 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='center'>".$row['source']."</td>";
         echo "<td align='center'>".$row['score']."</td>";
         echo "<td align='center'>".$row['state']."</td>";
-        echo "<td align='center'><a href=test.php?axa=$row[certificate_num]>通过|</a><a href=test.php?axa=$row[certificate_num]>不通过</a></td>";
+        echo "<td align='center'><a href=registrar_certificate_review.php?cert_num=$row[certificate_num]>通过|
+        </a><a href=registrar_review_del_cert.php?cert_num=$row[certificate_num]>不通过</a></td>";
         echo "</tr>";
 
     }

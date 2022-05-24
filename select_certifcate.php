@@ -12,7 +12,7 @@ echo '查询到的记录数量'.mysqli_num_rows($result);
 
 
 mysqli_data_seek($result,0);
-echo "<table>
+echo "<table border='1'  cellspacing='0'>
 <tr>
 <th>证书名称</th>
 <th>类型</th>

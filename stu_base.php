@@ -19,7 +19,7 @@ echo "$cer_name";
 echo $row['student_id'];
 
 mysqli_data_seek($result,0);
-echo "<table>
+echo "<table border='1'  cellspacing='0'>
 <tr>
 <th>Id</th>
 <th>name</th>

@@ -20,7 +20,7 @@ echo '查询到的记录数量'.mysqli_num_rows($result);
 
 
 mysqli_data_seek($result,0);
-echo "<table>
+echo "<table border='1'  cellspacing='0'>
 <tr>
 <th>学生学号</th>
 <th>学生姓名</th>
@@ -46,6 +46,7 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='center'>".$row['score']."</td>";
         echo "<td align='center'>".$row['authorities']."</td>";
         echo "<td align='center'>".$row['state']."</td>";
+        echo "<td align='center'></a><a href=registrar_review_del_cert.php?cert_num=$row[certificate_num]>删除</a></td>";
         echo "</tr>";
 
         $sum=$sum+$row['score'];
