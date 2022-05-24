@@ -7,14 +7,14 @@ require './src/PHPMailer.php';
 require './src/SMTP.php';
 require 'link.php';//添加数据库
 
-$stu_id=$_POST["stu-id"];
+$stu_id=$_POST["stu_id"];
 $conclusion=$_POST["txt"];
 
 $sql = "SELECT 
 `email` 
 FROM 
 `student` 
-WHERE `student-id` = $stu_id";
+WHERE `student_id` = $stu_id";
 
 mysqli_query($conn,"set names utf8");
 $result=mysqli_query($conn,$sql);

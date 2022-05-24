@@ -1,16 +1,16 @@
 <?php
 require 'link.php';//添加数据库
 
-$stu_id=$_POST["stu-id"];//以CCNA证书为例
+$stu_id=$_POST["stu_id"];//以CCNA证书为例
 
 $sql = "SELECT 
-`student-id`, `student-name`, `total`.`certificate-name`,  `total`.`certificate-num`,
+`student_id`, `student_name`, `total`.`certificate_name`,  `total`.`certificate_num`,
 `source`, `score`,`authorities`,`state` 
 FROM 
 `total`, `certificate` 
 WHERE 
-`total`.`student-id` = '$stu_id' 
-AND `total`.`certificate-name` = `certificate`.`certificate-name`";
+`total`.`student_id` = '$stu_id' 
+AND `total`.`certificate_name` = `certificate`.`certificate_name`";
 
 
 mysqli_query($conn,"set names utf8");
@@ -38,10 +38,10 @@ if($result && mysqli_num_rows($result)>0)
     {
         //$rows[]=$row;
         echo "<tr>";
-        echo "<td align='left'>".$row['student-id']."</td>";
-        echo "<td align='left'>".$row['student-name']."</td>";
-        echo "<td align='center'>".$row['certificate-name']."</td>";
-        echo "<td align='center'>".$row['certificate-num']."</td>";
+        echo "<td align='left'>".$row['student_id']."</td>";
+        echo "<td align='left'>".$row['student_name']."</td>";
+        echo "<td align='center'>".$row['certificate_name']."</td>";
+        echo "<td align='center'>".$row['certificate_num']."</td>";
         echo "<td align='center'>".$row['source']."</td>";
         echo "<td align='center'>".$row['score']."</td>";
         echo "<td align='center'>".$row['authorities']."</td>";

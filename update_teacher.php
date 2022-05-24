@@ -17,7 +17,7 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
         exit;
     }
 
-    $sql = "select `teacher-id` from `teacher` where `teacher-id` = '$number'"; //SQL语句
+    $sql = "select `teacher_id` from `teacher` where `teacher_id` = '$number'"; //SQL语句
     mysqli_query($conn,"set names utf8");
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
@@ -28,7 +28,7 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
         echo "<script>alert('输入的工号不存在'); history.go(-1);</script>";
     } else 
     {  
-        $sql_insert = "UPDATE `teacher` SET  `teacher-id` = '$number_news',`realname` = '$user', `job-title` = '$title', `email` = '$email' WHERE `teacher-id` = '$number'";
+        $sql_insert = "UPDATE `teacher` SET  `teacher_id` = '$number_news',`realname` = '$user', `job_title` = '$title', `email` = '$email' WHERE `teacher_id` = '$number'";
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
             echo "<script>alert('更新成功！ '); history.go(-1);</script>";

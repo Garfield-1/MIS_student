@@ -16,7 +16,7 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
         exit;
     }
 
-    $sql = "select `teacher-id` from `teacher` where `teacher-id` = '$number'"; //SQL语句
+    $sql = "select `teacher_id` from `teacher` where `teacher_id` = '$number'"; //SQL语句
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 
@@ -26,7 +26,7 @@ if ($user == "" || $email == "" || $number == "" || $title == "") {
         echo "<script>alert('用户已存在'); history.go(-1);</script>";
     } else //不存在当前注册用户名称 
     {
-        $sql_insert = "insert into `teacher` ( `teacher-id`, `realname`,`job-title`,`email`) VALUES ( '".$number." ', '".$user." ','".$title."','".$email."')";
+        $sql_insert = "insert into `teacher` ( `teacher_id`, `realname`,`job_title`,`email`) VALUES ( '".$number." ', '".$user." ','".$title."','".$email."')";
         mysqli_query($conn,"set names utf8");
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {

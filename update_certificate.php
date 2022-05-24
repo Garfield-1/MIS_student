@@ -16,7 +16,7 @@ if ($certificate == "" || $type == "" || $number == "" || $source == "") {
         exit;
     }
 
-    $sql = "select `certificate-name` from `certificate` where `certificate-name` = '$certificate'"; //SQL语句
+    $sql = "select `certificate_name` from `certificate` where `certificate_name` = '$certificate'"; //SQL语句
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 
@@ -26,7 +26,7 @@ if ($certificate == "" || $type == "" || $number == "" || $source == "") {
         echo "<script>alert('输入的证书不存在'); history.go(-1);</script>";
     } else 
     {  
-        $sql_insert = "UPDATE `certificate` SET  `score` = '$number', `source` = '$source', `type` = '$type' WHERE `certificate-name` = '$certificate'";
+        $sql_insert = "UPDATE `certificate` SET  `score` = '$number', `source` = '$source', `type` = '$type' WHERE `certificate_name` = '$certificate'";
         mysqli_query($conn,"set names utf8");
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {

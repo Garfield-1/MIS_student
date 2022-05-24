@@ -1,7 +1,7 @@
 <?php
 require 'link.php';//添加数据库
 
-$sql="select `student-id`,`stu-name`,`email`,`stu-profession` from `student`";
+$sql="select `student_id`,`stu_name`,`email`,`stu_profession` from `student`";
 
 
 mysqli_query($conn,"set names utf8");
@@ -25,10 +25,10 @@ if($result && mysqli_num_rows($result)>0)
     {
         //$rows[]=$row;
         echo "<tr>";
-        echo "<td align='left'>".$row['student-id']."</td>";
-        echo "<td align='center'>".$row['stu-name']."</td>";
+        echo "<td align='left'>".$row['student_id']."</td>";
+        echo "<td align='center'>".$row['stu_name']."</td>";
         echo "<td align='center'>".$row['email']."</td>";
-        echo "<td align='center'>".$row['stu-profession']."</td>";
+        echo "<td align='center'>".$row['stu_profession']."</td>";
         echo "</tr>";
 
     }

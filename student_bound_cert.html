@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+﻿<!DOCTYPE html PUBLIC >
 <html>
 
 <head>
@@ -14,7 +14,7 @@
   <div id="dcWrap">
     <div id="dcHead">
       <div id="head">
-        <div class="logo"><a href="index.html"><img src="images/北信logo.jpg " width="150" height="30" alt="logo"></a>
+        <div class="logo"><a href="consult_student.html"><img src="images/北信logo.jpg " width="150" height="30" alt="logo"></a>
         </div>
         <div class="nav">
           <ul class="navRight">
@@ -33,7 +33,7 @@
     <div id="dcLeft">
       <div id="menu">
         <ul class="top">
-          <li><a href="index.html"><i class="home"></i><em>管理首页</em></a></li>
+          <li><a href="consult_student.html"><i class="home"></i><em>管理首页</em></a></li>
         </ul>
       </div>
     </div>
@@ -41,13 +41,13 @@
       <!-- 当前位置 -->
       <div id="urHere">管理中心<b>></b><strong>证书绑定</strong> </div>
       <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-        <h3><a href="index.html" class="actionBtn">返回列表</a>证书绑定</h3>
+        <h3><a href="consult_student.html" class="actionBtn">返回列表</a>证书绑定</h3>
         <form action="student_bound_cert.php" method="post">
           <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
             <tr>
               <td width="100" align="right">学生姓名</td>
               <td>
-                <input type="teacher_nub" name="stu-name" size="40" class="inpMain" />
+                <input type="teacher_nub" name="stu_name" size="40" class="inpMain" />
               </td>
             </tr>
             <tr>
@@ -59,7 +59,7 @@
             <tr>
               <td align="right">证书名称</td>
               <td>
-                <input type="teacher_nub" name="cert-name" placeholder="通过下拉菜单选择" id="txt" size="40" class="inpMain" />
+                <input type="teacher_nub" name="cert_name" placeholder="通过下拉菜单选择" id="txt" size="40" class="inpMain" />
                 <select id="test" onchange="tt(this.id)">
                   <option value="0">请选择证书</option>
                   <option value="1">“1+X”财务数字化应用职业技能等级证书 (高级)</option>
@@ -160,7 +160,7 @@
             <tr>
               <td align="right">证书编号</td>
               <td>
-                <input type="teacher_nub" name="cert-num" size="40" class="inpMain" />
+                <input type="teacher_nub" name="cert_num" size="40" class="inpMain" />
               </td>
             </tr>
             <tr>

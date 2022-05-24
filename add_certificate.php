@@ -16,7 +16,7 @@ if ($name == "" || $type == "" || $source == "" || $score == "") {
         exit;
     }
 
-    $sql = "select `certificate-name` from `certificate` where `certificate-name` = '$name'"; //SQL语句
+    $sql = "select `certificate_name` from `certificate` where `certificate_name` = '$name'"; //SQL语句
     mysqli_query($conn,"set names utf8");
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
@@ -27,7 +27,7 @@ if ($name == "" || $type == "" || $source == "" || $score == "") {
         echo "<script>alert('证书已存在'); history.go(-1);</script>";
     } else //不存在当前注册用户名称 
     {
-        $sql_insert = "insert into `certificate` ( `certificate-name`, `type`,`source`,`score`) VALUES ( '".$name." ', '".$type." ','".$source."','".$score."')";
+        $sql_insert = "insert into `certificate` ( `certificate_name`, `type`,`source`,`score`) VALUES ( '".$name." ', '".$type." ','".$source."','".$score."')";
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
             echo "<script>alert('添加成功！'); history.go(-1);</script>";

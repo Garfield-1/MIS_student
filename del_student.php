@@ -12,7 +12,7 @@ if ( $number == "" ) {
         exit;
     }
 
-    $sql = "select `student-id` from `student` where `student-id` = '$number'"; //SQL语句
+    $sql = "select `student_id` from `student` where `student_id` = '$number'"; //SQL语句
     $result = mysqli_query($conn, $sql); //执行SQL语句 
     $num = mysqli_num_rows($result); //统计执行结果影响的行数 
 
@@ -22,7 +22,7 @@ if ( $number == "" ) {
         echo "<script>alert('输入的学号不存在'); history.go(-1);</script>";
     } else 
     {  
-        $sql_insert = "DELETE FROM `student` WHERE `student-id` =  '$number'";
+        $sql_insert = "DELETE FROM `student` WHERE `student_id` =  '$number'";
         $result_insert = mysqli_query($conn, $sql_insert); //执行SQL语句 
         if ($result_insert) {
             echo "<script>alert('删除成功！'); history.go(-1);</script>";

@@ -1,7 +1,7 @@
 <?php
 require 'link.php';//添加数据库
 
-$sql="select `certificate-name`,`type`,`source`,`score` from `certificate`";
+$sql="select `certificate_name`,`type`,`source`,`score` from `certificate`";
 
 
 mysqli_query($conn,"set names utf8");
@@ -25,7 +25,7 @@ if($result && mysqli_num_rows($result)>0)
     {
         //$rows[]=$row;
         echo "<tr>";
-        echo "<td align='left'>".$row['certificate-name']."</td>";
+        echo "<td align='left'>".$row['certificate_name']."</td>";
         echo "<td align='center'>".$row['type']."</td>";
         echo "<td align='center'>".$row['source']."</td>";
         echo "<td align='center'>".$row['score']."</td>";

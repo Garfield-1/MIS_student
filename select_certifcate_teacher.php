@@ -4,10 +4,10 @@ require 'link.php';//添加数据库
 $teacher_id=$_POST["teacher-id"];//以CCNA证书为例
 
 $sql = "SELECT 
-`certificate-name`, 
-`student-id`, 
-`student-name`, 
-`certificate-num`, 
+`certificate_name`, 
+`student_id`, 
+`student_name`, 
+`certificate_num`, 
 `tutor` 
 FROM 
 `total` 
@@ -39,10 +39,10 @@ if($result && mysqli_num_rows($result)>0)
         //$rows[]=$row;
         echo "<tr>";
         echo "<td align='left'>".$row['tutor']."</td>";
-        echo "<td align='left'>".$row['student-id']."</td>";
-        echo "<td align='left'>".$row['student-name']."</td>";
-        echo "<td align='center'>".$row['certificate-name']."</td>";
-        echo "<td align='center'>".$row['certificate-num']."</td>";
+        echo "<td align='left'>".$row['student_id']."</td>";
+        echo "<td align='left'>".$row['student_name']."</td>";
+        echo "<td align='center'>".$row['certificate_name']."</td>";
+        echo "<td align='center'>".$row['certificate_num']."</td>";
         echo "</tr>";
     }
 }

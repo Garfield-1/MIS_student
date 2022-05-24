@@ -1,16 +1,17 @@
 <?php
 require 'link.php';//添加数据库
 
-$cert_name=$_POST["cert_name"];//以CCNA证书为例
+$stu_id=$_POST["stu_id"];//以CCNA证书为例
 
 $sql = "SELECT 
-`student_id`,`student_name`, `total`.`certificate_name`, 
-`total`.`certificate_num`,`source`, `score`,`authorities`,`state`
+`student_id`, `student_name`, `total`.`certificate_name`,  `total`.`certificate_num`,
+`source`, `score`,`authorities`,`state` 
 FROM 
 `total`, `certificate` 
 WHERE 
-`certificate`.`certificate_name` = '$cert_name' 
-AND `total`.`certificate_name` = '$cert_name'";
+`total`.`student_id` = '$stu_id' 
+AND `total`.`certificate_name` = `certificate`.`certificate_name`
+AND `total`.`state`='已审核'";
 
 
 mysqli_query($conn,"set names utf8");
@@ -29,8 +30,8 @@ echo "<table>
 <th>发行机构</th>
 <th>对应学分</th>
 <th>机构官网</th>
-<th>当前状态</th>
 </tr>";
+$sum=0;
 if($result && mysqli_num_rows($result)>0)
 {
     while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
@@ -44,10 +45,11 @@ if($result && mysqli_num_rows($result)>0)
         echo "<td align='center'>".$row['source']."</td>";
         echo "<td align='center'>".$row['score']."</td>";
         echo "<td align='center'>".$row['authorities']."</td>";
-        echo "<td align='center'>".$row['state']."</td>";
         echo "</tr>";
 
+        $sum=$sum+$row['score'];
     }
 }
+echo "   获得学分总计:$sum";
 
 ?>
