@@ -5,7 +5,6 @@ $sql="select `certificate_name`,`type`,`source`,`score` from `certificate`";
 
 
 mysqli_query($conn,"set names utf8");
-mysqli_query($conn,"set names utf8");
 $result=mysqli_query($conn,$sql);
 
 if(mysqli_num_rows($result)){
