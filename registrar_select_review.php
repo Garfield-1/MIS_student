@@ -4,7 +4,8 @@ require 'link.php';//添加数据库
 
 $sql = "SELECT 
 `total`.`student_id`, `student_name`, 
-`total`.`certificate_name`, `total`.`certificate_num`,`type`,`source`,`score`,`state`
+`total`.`certificate_name`, `total`.`certificate_num`,`type`,`source`,`score`,
+`state`,`authorities`
 FROM 
 `total`, `certificate`, `student` 
 WHERE 
@@ -30,6 +31,7 @@ if(mysqli_num_rows($result)){
     <th>证书编号</th>
     <th>证书类型</th>
     <th>证书发行机构</th>
+    <th>机构官网</th>
     <th>证书对应学分</th>
     <th>当前状态</th>
     </tr>";
@@ -45,6 +47,7 @@ if(mysqli_num_rows($result)){
             echo "<td align='center'>".$row['certificate_num']."</td>";
             echo "<td align='center'>".$row['type']."</td>";
             echo "<td align='center'>".$row['source']."</td>";
+            echo "<td align='center'>".$row['authorities']."</td>";
             echo "<td align='center'>".$row['score']."</td>";
             echo "<td align='center'>".$row['state']."</td>";
             echo "<td align='center'><a href=registrar_certificate_review.php?cert_num=$row[certificate_num]>通过|

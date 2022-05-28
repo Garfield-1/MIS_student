@@ -44,7 +44,7 @@ if(mysqli_num_rows($result)){
             echo "<td align='center'>".$row['certificate_num']."</td>";
             echo "<td align='center'>".$row['source']."</td>";
             echo "<td align='center'>".$row['score']."</td>";
-            echo "<td align='center'>".$row['authorities']."</td>";
+            echo "<td align='center'>".$row['authorities']."</td>"; 
             echo "<td align='center'>".$row['state']."</td>";
             echo "<td align='center'></a><a href=registrar_review_del_cert.php?cert_num=$row[certificate_num]>删除</a></td>";
             echo "</tr>";

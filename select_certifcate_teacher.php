@@ -12,7 +12,8 @@ $sql = "SELECT
 FROM 
 `total` 
 WHERE 
-`total`.`tutor` = '$teacher_id'";
+`total`.`tutor` = '$teacher_id'
+AND `total`.`state`='已审核'";
 
 
 mysqli_query($conn,"set names utf8");
